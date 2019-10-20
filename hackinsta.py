@@ -36,8 +36,7 @@ class Instabrute():
 		self.IsUserExists()
 
 
-		#UsePorxy = Input('[*] Do you want to use proxy (y/n): ').upper()
-		UseProxy = 'n'
+		UsePorxy = Input('[*] Do you want to use proxy (y/n): ').upper()
 		if (UsePorxy == 'Y' or UsePorxy == 'YES'):
 			self.randomProxy()
 
@@ -48,7 +47,7 @@ class Instabrute():
 			with open(self.passwordsFile) as f:
 				self.passwords = f.read().splitlines()
 				passwordsNumber = len(self.passwords)
-				if (passwordsNumber > 0.002):
+				if (passwordsNumber > 0):
 					print ('[*] %s Passwords loads successfully' % passwordsNumber)
 				else:
 					print('Password file are empty, Please add passwords to it.')
@@ -124,7 +123,6 @@ class Instabrute():
 			print (data['message'])
 
 			UsePorxy = Input('[*] Do you want to use proxy (y/n): ').upper()
-			UseProxy = 'n'
 			if (UsePorxy == 'Y' or UsePorxy == 'YES'):
 				print ('[$] Try to use proxy after fail.')
 				randomProxy() #Check that, may contain bugs
